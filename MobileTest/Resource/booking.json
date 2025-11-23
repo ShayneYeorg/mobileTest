@@ -36,7 +36,7 @@
                     "displayName": "CCC DisplayName",
                     "url": "www.ship.com"
                 },
-                "destinationCity": "CCC City",
+                "destinationCity": "CCC",
                 "origin":
                 {
                     "code": "BBB",
@@ -64,6 +64,46 @@
                     "url": "www.ship.com"
                 },
                 "originCity": "广州"
+            }
+        },
+        {
+            "id": 4,
+            "originAndDestinationPair":
+            {
+                "destination":
+                {
+                    "code": "PEK",
+                    "displayName": "首都国际机场",
+                    "url": "www.ship.com"
+                },
+                "destinationCity": "一个名字非常非常长的城市",
+                "origin":
+                {
+                    "code": "CAN",
+                    "displayName": "白云国际机场",
+                    "url": "www.ship.com"
+                },
+                "originCity": "广州"
+            }
+        },
+        {
+            "id": 5,
+            "originAndDestinationPair":
+            {
+                "destination":
+                {
+                    "code": "PEK",
+                    "displayName": "首都国际机场",
+                    "url": "www.ship.com"
+                },
+                "destinationCity": "北京",
+                "origin":
+                {
+                    "code": "CAN",
+                    "displayName": "一个名字非常非常非常长的机场",
+                    "url": "www.ship.com"
+                },
+                "originCity": "一个名字非常非常长的城市"
             }
         }
     ]

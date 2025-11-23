@@ -70,10 +70,21 @@ struct SegmentRow: View {
     
     var body: some View {
         VStack() {
-            HStack {
-                Text(segment.originAndDestinationPair.originCity).font(.system(size: 25, design: .default))
+            ZStack(alignment: .center) {
                 Text("至")
-                Text(segment.originAndDestinationPair.destinationCity).font(.system(size: 25, design: .default))
+                HStack {
+                    Text(segment.originAndDestinationPair.originCity)
+                        .font(.system(size: 20, design: .default))
+                        .frame(width: UIScreen.main.bounds.width / 2 - 80)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.leading)
+                    Spacer()
+                    Text(segment.originAndDestinationPair.destinationCity)
+                        .font(.system(size: 20, design: .default))
+                        .frame(width: UIScreen.main.bounds.width / 2 - 80)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.trailing)
+                }
             }
             
             Spacer()

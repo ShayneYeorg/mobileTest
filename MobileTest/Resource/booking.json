@@ -36,7 +36,7 @@
                     "displayName": "CCC DisplayName",
                     "url": "www.ship.com"
                 },
-                "destinationCity": "CCC",
+                "destinationCity": "CCC City",
                 "origin":
                 {
                     "code": "BBB",
@@ -44,6 +44,26 @@
                     "url": "www.ship.com"
                 },
                 "originCity": "BBB City"
+            }
+        },
+        {
+            "id": 3,
+            "originAndDestinationPair":
+            {
+                "destination":
+                {
+                    "code": "PEK",
+                    "displayName": "首都国际机场",
+                    "url": "www.ship.com"
+                },
+                "destinationCity": "北京",
+                "origin":
+                {
+                    "code": "CAN",
+                    "displayName": "白云国际机场",
+                    "url": "www.ship.com"
+                },
+                "originCity": "广州"
             }
         }
     ]

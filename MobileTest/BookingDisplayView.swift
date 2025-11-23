@@ -24,7 +24,10 @@ struct BookingDisplayView: View {
         
         Group {
             if let model = model {
-                VStack(alignment: .leading, spacing: 20) {
+                
+                Text(model.canIssueTicketChecking ? "可检票" : "未可检票").padding(20)
+                
+                VStack {
                     List(model.segments) { segment in
                         SegmentRow(segment: segment)
                     }
@@ -49,14 +52,15 @@ struct BookingDisplayView: View {
         }
         catch {
             // 弹窗提示Error信息
-            UITool.alert(msg: error.localizedDescription) {
-                // 没有数据可展示，就重新获取
+            UITool.alert(msg: error.localizedDescription + (model == nil ? "，点击重试" : "")) {
+                // 没有数据可展示的话，点击"确定"就重新获取数据
                 if model == nil {
                     reloadTrigger.toggle()
                 }
             }
         }
-        return model // 获取数据出错的情况下，保持当前显示
+        // 其他情况，保持当前显示
+        return model
     }
 }
 
@@ -65,17 +69,22 @@ struct SegmentRow: View {
     let segment: Segment
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(segment.originAndDestinationPair.origin.code)
-            Text(segment.originAndDestinationPair.origin.displayName)
-            Text(segment.originAndDestinationPair.originCity)
+        VStack() {
+            HStack {
+                Text(segment.originAndDestinationPair.originCity).font(.system(size: 25, design: .default))
+                Text("至")
+                Text(segment.originAndDestinationPair.destinationCity).font(.system(size: 25, design: .default))
+            }
             
             Spacer()
             
-            Text(segment.originAndDestinationPair.destination.code)
-            Text(segment.originAndDestinationPair.destination.displayName)
-            Text(segment.originAndDestinationPair.destinationCity)
+            VStack(alignment: .leading) {
+                Text("出发: " + segment.originAndDestinationPair.origin.displayName + " (" + segment.originAndDestinationPair.origin.code + ")")
+                
+                Text("到达: " + segment.originAndDestinationPair.destination.displayName + " (" + segment.originAndDestinationPair.destination.code + ")")
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .center)
         .padding()
     }
 }

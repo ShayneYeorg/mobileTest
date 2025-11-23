@@ -19,7 +19,7 @@
                 "destinationCity": "BBB City",
                 "origin":
                 {
-                    "code": "DDD",
+                    "code": "FFF",
                     "displayName": "AAA DisplayName",
                     "url": "www.ship.com"
                 },

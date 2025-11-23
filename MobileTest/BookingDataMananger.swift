@@ -19,10 +19,6 @@ class BookingDataManager {
     static let shared = BookingDataManager()
     private let mockDataFileName = "booking"
     
-    func provideData() async throws -> BookingModel? {
-        return try await self.provideData(forceFromServer: false)
-    }
-    
     /// 获取Booking的数据列表
     /// - Parameter forceFromServer: 是否强制从服务器拉取数据。false的时候优先从缓存获取，缓存获取失败再向服务器拉取
     /// - Returns: models: Booking数据列表
@@ -40,6 +36,8 @@ class BookingDataManager {
             CacheTool.shared.save(model)
             return (model)
         }
+        
+        // 3、完全获取不到数据，返回nil
         return nil
     }
     

@@ -18,17 +18,15 @@ import SwiftUI
 struct BookingDisplayView: View {
     
     @State private var model: BookingModel?
-    @State private var isLoading = true
+    @State var reloadTrigger = false
     
     var body: some View {
         
         Group {
-            if (!isLoading) {
+            if let model = model {
                 VStack(alignment: .leading, spacing: 20) {
-                    if let mdl = model {
-                        List(mdl.segments) { segment in
-                            SegmentRow(segment: segment)
-                        }
+                    List(model.segments) { segment in
+                        SegmentRow(segment: segment)
                     }
                 }
             } else {
@@ -39,24 +37,24 @@ struct BookingDisplayView: View {
             model = await loadBookings(isRefresh: true)
             CommonTool.printLog("\(String(describing: model))")
         }
-        .task {
+        .task (id: reloadTrigger) {
             model = await loadBookings(isRefresh: false)
-            isLoading = false
             CommonTool.printLog("\(String(describing: model))")
         }
     }
     
     func loadBookings(isRefresh: Bool) async -> BookingModel? {
         do {
-            if !isRefresh {
-                return try await BookingDataManager.shared.provideData()
-            }
-            return try await BookingDataManager.shared.provideData(forceFromServer: true)
+            return try await BookingDataManager.shared.provideData(forceFromServer: isRefresh)
         }
         catch {
-            let msg = error.localizedDescription
-            CommonTool.printLog("错误信息：\(msg)")
-            UITool.alert(msg: msg) // 弹窗提示Error信息
+            // 弹窗提示Error信息
+            UITool.alert(msg: error.localizedDescription) {
+                // 没有数据可展示，就重新获取
+                if model == nil {
+                    reloadTrigger.toggle()
+                }
+            }
         }
         return model // 获取数据出错的情况下，保持当前显示
     }

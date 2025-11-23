@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3433C4832ED348CA004F9AAA /* booking.json in Resources */ = {isa = PBXBuildFile; fileRef = 3433C4822ED348C9004F9AAA /* booking.json */; };
 		34BF157E2ECF65A10015DD16 /* MobileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF157D2ECF65A10015DD16 /* MobileTestApp.swift */; };
 		34BF15822ECF65A60015DD16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BF15812ECF65A60015DD16 /* Assets.xcassets */; };
 		34BF15852ECF65A60015DD16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BF15842ECF65A60015DD16 /* Preview Assets.xcassets */; };
 		34BF158C2ECF670C0015DD16 /* BookingDataMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF158B2ECF670C0015DD16 /* BookingDataMananger.swift */; };
 		34BF158E2ECF67740015DD16 /* BookingDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF158D2ECF67740015DD16 /* BookingDisplayView.swift */; };
-		34BF15932ECF75270015DD16 /* booking.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BF15922ECF75270015DD16 /* booking.json */; };
 		34BF15972ECF75BE0015DD16 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF15962ECF75BE0015DD16 /* BookingModel.swift */; };
 		34BF15992ECF75CF0015DD16 /* CacheTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF15982ECF75CF0015DD16 /* CacheTool.swift */; };
 		34BF159B2ECF78700015DD16 /* ErrorHandlingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF159A2ECF78700015DD16 /* ErrorHandlingTool.swift */; };
@@ -21,13 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3433C4822ED348C9004F9AAA /* booking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = booking.json; sourceTree = "<group>"; };
 		34BF157A2ECF65A10015DD16 /* MobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF157D2ECF65A10015DD16 /* MobileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestApp.swift; sourceTree = "<group>"; };
 		34BF15812ECF65A60015DD16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BF15842ECF65A60015DD16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34BF158B2ECF670C0015DD16 /* BookingDataMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataMananger.swift; sourceTree = "<group>"; };
 		34BF158D2ECF67740015DD16 /* BookingDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDisplayView.swift; sourceTree = "<group>"; };
-		34BF15922ECF75270015DD16 /* booking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = booking.json; sourceTree = "<group>"; };
 		34BF15962ECF75BE0015DD16 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		34BF15982ECF75CF0015DD16 /* CacheTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTool.swift; sourceTree = "<group>"; };
 		34BF159A2ECF78700015DD16 /* ErrorHandlingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingTool.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		34BF15912ECF75270015DD16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				34BF15922ECF75270015DD16 /* booking.json */,
+				3433C4822ED348C9004F9AAA /* booking.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BF15852ECF65A60015DD16 /* Preview Assets.xcassets in Resources */,
-				34BF15932ECF75270015DD16 /* booking.json in Resources */,
+				3433C4832ED348CA004F9AAA /* booking.json in Resources */,
 				34BF15822ECF65A60015DD16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

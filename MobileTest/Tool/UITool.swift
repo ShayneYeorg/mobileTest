@@ -10,11 +10,15 @@ import UIKit
 
 class UITool {
     
-    static func alert(msg: String!) {
+    static func alert(msg: String!, completion: (()->Void)?) {
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             let alert = UIAlertController(title: "提示", message: msg, preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "确定", style: .cancel)
-            alert.addAction(cancelAction)
+            let action = UIAlertAction(title: "确定", style: .cancel) { _ in
+                if let completion = completion {
+                    completion()
+                }
+            }
+            alert.addAction(action)
             if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
                 let currentViewController = rootViewController
                 currentViewController.present(alert, animated: true, completion: nil)
